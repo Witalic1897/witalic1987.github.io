@@ -1,0 +1,575 @@
+// Fonts famaly
+
+@font-face {
+    font-family: 'Gotham_Pro_Regular';
+    src: url('../fonts/GothamPro-Bold.eot');
+    src: url('../fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro-Bold.woff2') format('woff2'),
+        url('../fonts/GothamPro-Bold.woff') format('woff'),
+        url('../fonts/GothamPro-Bold.ttf') format('truetype'),
+        url('../fonts/GothamPro-Bold.svg#GothamPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham_Pro_Bold';
+    src: url('../fonts/GothamPro.eot');
+    src: url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro.woff2') format('woff2'),
+        url('../fonts/GothamPro.woff') format('woff'),
+        url('../fonts/GothamPro.ttf') format('truetype'),
+        url('../fonts/GothamPro.svg#GothamPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// colors
+
+@white: #ffffff;
+@bg-light: #f4f4f4;
+@button-color: #ffd200;
+@importantText: #292929;
+@sidetext: #8c8c8c;
+@stock: #ff0000;
+
+// Mix-in
+
+.Gotham_Bold() {
+    font-family: "Gotham_Pro_Bold";
+    font-weight: 900;
+}
+.button_yellow {
+    display: inline-block;
+    background-color: @button-color;
+    font-size: 12px;
+    padding: 19px 52px;
+    color: @importantText;
+    font-weight: 900;
+    transition: all 0,2s;
+    .Gotham_Bold();
+    &:hover {
+        background-color: darken(@button-color, 3%)
+    }
+}
+// Basic setting
+
+* {
+    font-size: 10px;
+    font-family: "Gotham_regular";
+}
+a {
+    .Gotham_Bold();
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    color: @importantText;
+    &:hover {
+        color: @importantText;
+    }  
+}
+section {
+    h2 {
+        text-align: center
+    }
+}
+button {
+    border: 0px;
+}
+input {
+    outline: none;
+}
+textarea {
+    outline: none;
+}
+
+
+
+// Typography
+
+section {
+    padding: 8rem 0;
+}
+h2 {
+    .Gotham_Bold();
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+h1 {
+    color: #ffffff;
+    font-size: 36px;
+    .Gotham_Bold();
+    font-style: uppercase;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+
+// Work
+
+// Granit
+.logo {
+    .Gotham_Bold();
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: @importantText;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+// Доставка нерудных материалов
+.sideText {
+    color: @sidetext;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 0;
+}
+
+// Для позиционирования
+.logop {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+main {
+    margin-top: 25px;
+}
+nav {
+    margin-top: 35px;
+}
+// Телевон
+.phone {
+    text-decoration: none;
+    color: @importantText;
+    .Gotham_Bold();
+    font-weight: 900;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+// Подпись к кнопке вызова
+.bell {
+    color: @sidetext;
+    margin-bottom: 0;
+    font-size: 11px;
+}
+// Конпка вызова
+.btn_coll {
+    border: solid @importantText 2px;
+    background-color: #fff;
+    .Gotham_Bold();
+    padding: 10px 30px;
+    font-size: 12px;
+    margin-top: 4px;
+    transition: all 0,2s;
+    &:hover {
+        cursor: pointer;
+        background-color: darken(#fff, 10%);
+    }
+}
+.wrapper_but {
+    text-align: right;
+    padding: 0 15px 0 0;
+}
+// Блок с телефоном
+.main_text {
+    text-align: right;
+    padding-top: 4px;
+}
+// Обертка для ссылок
+.wrapperlink {
+    padding: 23px 47px;
+    display: inline-block;
+    transition: all 0,2s;
+    .Gotham_Bold();
+    background-color: @button-color;
+    &:hover {
+        background-color: lighten(@button-color, 10%)
+    }
+}
+// Ссылки
+.links {
+    text-align: center;
+    padding-left: 70px;
+    padding-right:70px;
+    background-color: @button-color;
+}
+// Шапка сайта
+header {
+    background: url(..//img/images/bggrunt.png);
+    background-size: cover;
+    margin-top: -33px;
+    padding-top: 150px;
+    padding-bottom: 120px;
+    span {
+        color: @white;
+        font-size: 14px;
+    }
+    a {
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+}
+.delivery {
+    margin-top: 65px;
+}
+.or {
+    margin-left: 25px;
+    margin-right: 10px;
+}
+.katalog {
+    color: @white;
+    font-size: 12px;
+    &:hover {
+        color: @white;
+    }
+}
+// Адаптивность для main
+
+@media (max-width: 767px) {
+    main {
+        text-align: center; 
+    }
+    .main_text {
+        text-align: center;
+    }
+    .wrapper_but {
+        text-align: center;
+    }
+}
+@media (max-width: 483px) {
+    header {
+        h1 {
+            text-align: center;
+        }
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    .delivery {
+        text-align: center;
+    }
+    .katalog {
+        margin-left: 40px;
+    }
+    .or {
+        margin: 10px 0;
+    }
+}
+// first section
+.have {
+    background-color: @white;
+    font-size: 13px;
+    color: @sidetext;
+    text-align: center;
+    a {
+        font-size: 15px;
+        .Gotham_Bold();
+        display: block;
+        margin: 20px;
+    }
+    p {
+        font-size: 13px;
+        padding: 0 45px;
+    }
+}
+.headline {
+    color: @importantText;
+    text-transform: uppercase;
+    .Gotham_Bold();
+    margin-bottom: 100px;
+}
+.price {
+    .Gotham_Bold();
+    font-weight: 900;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+.priming {
+    margin-bottom: 115px;
+}
+.crushed_stone {
+    margin-bottom: 115px;
+}
+.sand {
+    margin-bottom: 115px;
+}
+
+// Адаптивность для 1 секции 
+
+@media (max-width: 992px) {
+    .have {
+        p {
+            padding: 0 200px;
+        }
+    }
+    .priming {
+        margin-bottom: 50px;
+    }
+    .crushed_stone {
+        margin-bottom: 50px;
+    }
+    .sand {
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 768px) {
+    .have {
+        p {
+            padding: 0 100px;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .have {
+        p {
+            padding: 0 50px;
+        }
+    }
+}
+
+// Second section
+
+.advantage {
+    background-color: @bg-light;
+    font-size: 12px;
+    padding: 80px 0;
+    h2 {
+        margin-bottom: 63px;
+    }
+    h3 {
+        .Gotham_Bold();
+        font-size: 15px;
+        font-weight: 900;
+    }
+    p {
+        font-size: 12px;
+        padding: 0 30px;
+    }
+    img {
+        padding: 30px 0;
+    }
+    &-price {
+        text-align: center;
+        width: 300px;
+        padding-bottom: 30px;
+        transition: all 0,5s;
+        border: solid 3px @white;
+        height: 240px;
+        &:hover {
+            background-color: @white;
+        }
+    }
+    &-delivery {
+        text-align: center;
+        width: 300px;
+        padding-bottom: 30px;
+        transition: all 0,5s;
+        border: solid 3px @white;
+        height: 240px;
+        &:hover {
+            background-color: @white;
+        }
+    }
+    &-whel {
+        text-align: center;
+        width: 300px;
+        padding-bottom: 30px;
+        transition: all 0,5s;
+        border: solid 3px @white;
+        height: 240px;
+        &:hover {
+            background-color: @white;
+        }
+    }
+}
+
+// Адаптивность для второй секции
+
+@media (max-width: 992px) {
+    .advantage {
+        padding-left: 33%;
+        h2 {
+            text-align: left;
+            padding-left: 8%;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .advantage {
+        padding-left: 27%;
+        h2 {
+            text-align: left;
+            padding-left: 8%;
+        }
+    }
+}
+@media (max-width: 540px) {
+    .advantage {
+        padding-left: 19%;
+        h2 {
+            text-align: left;
+            padding-left: 8%;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .advantage {
+        padding-left: 8%;
+        h2 {
+            text-align: left;
+            padding-left: 11%;
+        }
+    }
+}
+@media (max-width: 350px) {
+    .advantage {
+        padding-left: 0%;
+        h2 {
+            text-align: left;
+            padding-left: 11%;
+        }
+    }
+}
+
+// Популярные товары
+
+.product {
+    &-block {
+        margin-left: 10px;
+    }
+    text-align: center;
+    h2 {
+        margin-bottom: 80px;
+    }
+    &-slider {
+    color: @importantText;
+    font-size: 13px;
+    span {
+        font-size: 10px;
+        text-decoration: line-through;
+        margin-right: 16px;
+    }
+    p {
+        .Gotham_Bold;
+        font-size: 16px;
+        font-weight: 900;
+        display: inline-block;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    img {
+        padding: 20px 0;
+        display: block;
+        margin: 0 auto;
+    }
+    button {
+        display: block;
+        margin-bottom: 20px;
+        margin: auto;
+        margin-bottom: 20px;
+        &:hover {
+            outline: none;
+        }
+
+    }
+    }
+}
+.stock {
+    color: @stock;
+}
+
+// settings slider 
+
+.slick-active {
+    outline: none;
+}
+.arrow-left {
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 70px;
+    background: url(..//img/icon/arrow_left.svg) center no-repeat;
+    background-size: 100%;
+    border: none;
+    z-index: 99;
+    transform: translateY(-50%);
+}
+.arrow-right {
+    top: 50%;
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 70px;
+    background: url(..//img/icon/arrow_right.svg) center no-repeat;
+    background-size: 100%;
+    border: none;
+    z-index: 99;
+    transform: translateY(-50%);
+}
+
+// Модальые окна
+
+.popap {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    &-close {
+        position: fixed;
+        top: -14px;
+        right: -14px;
+        font-size: 25px;
+        text-align: center;
+        color: @bg-light;
+    }
+    &-content{
+        background-color: @white;
+        text-align: center;
+        padding: 15px 20px;
+        position: fixed;
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        input {
+            display: block;
+            padding: 5px 0;
+            width: 100%;
+            border: 2px solid @button-color;
+            padding-left: 3px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        textarea {
+            padding-left: 3px;
+            width: 100%;
+            border: 2px solid @button-color;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        &-header {
+            font-size: 18px;
+            .Gotham_Bold;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        &-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    }
+}
+.button-modal {
+    .button_yellow;
+}
